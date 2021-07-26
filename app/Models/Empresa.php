@@ -13,4 +13,9 @@ class Empresa extends Model
     protected $hidden = [];
 
     protected $primaryKey = 'empresa_id';
+
+    public function getUsuarios()
+    {
+        return $this->hasMany(Usuario::class);
+    }
 }
