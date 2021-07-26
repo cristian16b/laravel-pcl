@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('app');
 });
+
+Route::view('empresa', function () {
+    return view('livewire.empresa');
+});
+
+Route::get('usuario', function () {
+    return view('livewire.usuario');
+});
