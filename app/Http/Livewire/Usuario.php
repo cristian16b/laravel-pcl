@@ -21,6 +21,10 @@ class Usuario extends Component
         $this->nombre = null;
         $this->apellido = null;
         $this->correo = null;
+        $this->clave = null;
+        $this->grupo = null;
+        $this->empresa = null;
+        $this->anio = null;
     }
     public function store()
     {
