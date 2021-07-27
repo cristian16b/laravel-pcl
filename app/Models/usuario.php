@@ -12,7 +12,7 @@ class Usuario extends Model
     protected $fillable = ['nombre', 'apellido',
     'correo','clave','grupo','empresa','anio'];
     protected $hidden = ['clave'];
-    protected $primaryKey = 'usuario_id';
+    protected $primaryKey = 'id';
 
     public function getEmpresa()
     {
