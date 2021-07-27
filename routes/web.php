@@ -18,9 +18,9 @@ Route::get('/', function () {
 });
 
 Route::get('empresa', function () {
-    return view('livewire.empresa');
+    return view('livewire.empresa.empresa');
 });
 
 Route::get('usuario', function () {
-    return view('livewire.usuario');
+    return view('livewire.usuario.usuario');
 });
