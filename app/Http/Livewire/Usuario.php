@@ -4,15 +4,23 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Usuario as ModelsUsuario;
+use App\Http\Livewire\Empresa;
+use App\Models\Empresa as ModelEmpresa;
 
 class Usuario extends Component
 {
-    public $data, $nombre, $apellido, $correo, $clave, $grupo, $empresa, $anio, $selected_id;
+    public $data, $nombre, $apellido, $correo, $clave, $grupo, $empresa, $anio, $selected_id, $listaEmpresas;
     public $update = false;
 
     public function render()
     {
         $this->data = ModelsUsuario::all();
+        $this->listaEmpresas = ModelEmpresa::all();
+        // foreach ($this->listaEmpresas as $flight) {
+        //     // var_dump($flight);
+        //     echo $flight->id . '-' . $flight->nombre . '<br>';
+        // }
+        // die;
         return view('livewire.usuario.usuario');
     }
 

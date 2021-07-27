@@ -33,18 +33,24 @@
             @enderror
         </div>
         <div class="w-auto px-3">
-            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="direccion">Empresa</label>
-            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border {{ $errors->has('name') ? ' border-red-500' : 'border-gray-200' }} rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
-            id="empresa" wire:model="empresa" type="text" placeholder="Ingrese">
-            @error('empresa')
-                <span class="text-red-500 text-xs italic py-1">{{ $message }}</span>
-            @enderror
-        </div>
-        <div class="w-auto px-3">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="direccion">Año</label>
             <input class="appearance-none block w-full bg-gray-200 text-gray-700 border {{ $errors->has('name') ? ' border-red-500' : 'border-gray-200' }} rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
             id="anio" wire:model="anio" type="text" placeholder="Ingrese">
             @error('anio')
+                <span class="text-red-500 text-xs italic py-1">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="w-auto px-6">
+            <label  class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="empresa_id">Empresa</label>
+            <select wire:model="empresa" id="empresa_id">
+                <option selected="selected">Seleccione una empresa</option>
+                @foreach($this->listaEmpresas as $selectableEmpresa)
+                    <option value="{{ $selectableEmpresa->id }}">
+                        {{ $selectableEmpresa->nombre }} - {{ $selectableEmpresa->descripcion }} - {{ $selectableEmpresa->domicilio }}
+                    </option>
+                @endforeach
+            </select>
+            @error('empresa')
                 <span class="text-red-500 text-xs italic py-1">{{ $message }}</span>
             @enderror
         </div>

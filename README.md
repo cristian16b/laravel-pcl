@@ -17,6 +17,7 @@ DB_PASSWORD=
 3) Instalar tailwind css ver la doc. oficial 
 https://tailwindcss.com/docs/guides/laravel
 
-4) 
+4) Ejecutar las migraciones
+php artisan migrate
 
 
