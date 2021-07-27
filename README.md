@@ -1,23 +1,30 @@
 Notas para instalar y configurar el proyecto:
 
-1) Ejecutar 
+1) Clonar proyecto
+
+2) Ir a carpeta config/livewire.php y comentar la siguiente linea
+'asset_url' => url('/'),
+
+3) Ejecutar 
 
 composer install
 
-2) Correr 
+4) Correr 
 
 npm install
 
-2) En el .env se ven los parametros de la bd. Los copio a continuacion:
+5) En el .env se ven los parametros de la bd. Los copio a continuacion:
 
 DB_DATABASE=laravel
 DB_USERNAME=root
 DB_PASSWORD=
 
-3) Instalar tailwind css ver la doc. oficial 
+6) Instalar tailwind css ver la doc. oficial 
 https://tailwindcss.com/docs/guides/laravel
 
-4) Ejecutar las migraciones
+7) Ejecutar las migraciones
 php artisan migrate
 
+8) Ingresar en su navegador web a la url: 
+localhost/<nombre-proy>/public/
 
