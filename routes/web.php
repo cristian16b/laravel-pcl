@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('app');
 });
 
-Route::view('empresa', function () {
+Route::get('empresa', function () {
     return view('livewire.empresa');
 });
 
