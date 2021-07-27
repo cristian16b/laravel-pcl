@@ -1,8 +1,8 @@
 <div>  
     @if($update)
-        @include('livewire.empresa.update')
+        @include('livewire.usuario.update')
     @else
-        @include('livewire.empresa.create')
+        @include('livewire.usuario.create')
     @endif
 <table class="table-auto w-full">
         <thead>
