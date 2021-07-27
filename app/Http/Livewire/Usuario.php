@@ -36,15 +36,6 @@ class Usuario extends Component
     }
     public function store()
     {
-
-        // FIXME!!!
-        // SQLSTATE[HY000]: General error
-        // : 1364 Field 'empresa_id'
-        //  doesn't have a default value (SQL: insert into `usuarios` (`nombre`, `apellido`,
-        //   `correo`, `clave`, `grupo`, `anio`, `updated_at`, `created_at`)
-        //   values (w4444, 44444, 444444@correo.com, asddd, wwwew, qwww, 2021-07-27 19:39:46, 2021-07-27 19:39:46))
-
-
         $this->validate([
             'nombre' => 'required|min:5',
             'apellido' => 'required',
