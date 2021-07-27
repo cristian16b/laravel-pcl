@@ -24,8 +24,7 @@
                     <td class="border px-4 py-2">{{ $item->apellido }}</td>
                     <td class="border px-4 py-2">{{ $item->correo }}</td>
                     <td class="border px-4 py-2">{{ $item->clave }}</td>
-                    <td class="border px-4 py-2">{{ $item->clave }}</td>
-                    <td class="border px-4 py-2">{{ $item->empresa }}</td>
+                    <td class="border px-4 py-2">{{ $item->empresa }} - {{ $item->empresa }}</td>
                     <td class="border px-4 py-2">{{ $item->anio }}</td>
                     <td class="border px-4 py-2">
                         <button wire:click="edit({{ $item->id }})" 

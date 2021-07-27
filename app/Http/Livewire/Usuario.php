@@ -54,6 +54,10 @@ class Usuario extends Component
             'empresa' => 'required',
             'anio' => 'required',
         ]);
+
+
+        // $empresa = ModelEmpresa::find($this->empresa)->first();
+        
         $datos = [
             'nombre' => $this->nombre,
             'apellido' => $this->apellido,
@@ -64,7 +68,7 @@ class Usuario extends Component
             'anio' => $this->anio,
         ];
 
-        // dd($t);
+        // dd($datos);
         ModelsUsuario::create($datos);
         $this->resetInput();
         session()->flash('message', 'Usuario agregado.');
@@ -79,6 +83,7 @@ class Usuario extends Component
         $this->clave = $record->clave;
         $this->grupo = $record->grupo;
         $this->empresa = $record->empresa;
+        $this->anio = $record->anio;
         $this->update = true;
     }
     public function update()

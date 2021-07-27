@@ -10,7 +10,7 @@ class Usuario extends Model
     use HasFactory;
     protected $table = 'usuarios';
     protected $fillable = ['nombre', 'apellido',
-    'correo','clave','grupo','empresa','anio'];
+    'correo','clave','grupo','empresa_id','anio'];
     protected $hidden = ['clave'];
     protected $primaryKey = 'id';
 
