@@ -12,7 +12,8 @@ class Empresa extends Model
     protected $fillable = ['nombre', 'descripcion', 'direccion'];
     protected $hidden = [];
 
-    protected $primaryKey = 'empresa_id';
+    protected $primaryKey = 'id';
+    protected $guarded = [];
 
     public function getUsuarios()
     {

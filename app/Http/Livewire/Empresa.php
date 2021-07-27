@@ -30,20 +30,22 @@ class Empresa extends Component
             'descripcion' => 'required',
             'direccion' => 'required'
         ]);
-        Empresa::create([
+        ModelsEmpresa::create([
             'nombre' => $this->nombre,
             'descripcion' => $this->descripcion,
             'direccion' => $this->direccion,
         ]);
         $this->resetInput();
+        session()->flash('message', 'Contacto agregado.');
     }
     public function edit($id)
     {
-        $record = Empresa::findOrFail($id);
+        $record = ModelsEmpresa::findOrFail($id);
         $this->selected_id = $id;
         $this->nombre = $record->nombre;
         $this->descripcion = $record->descripcion;
-        $this->updateMode = true;
+        $this->direccion = $record->direccion;
+        $this->update = true;
     }
     public function update()
     {
@@ -53,20 +55,20 @@ class Empresa extends Component
             'direccion' => 'required'
         ]);
         if ($this->selected_id) {
-            $record = Empresa::find($this->selected_id);
+            $record = ModelsEmpresa::find($this->selected_id);
             $record->update([
                 'nombre' => $this->nombre,
                 'descripcion' => $this->descripcion,
                 'direccion' => $this->direccion,
             ]);
             $this->resetInput();
-            $this->updateMode = false;
+            $this->update = false;
         }
     }
     public function destroy($id)
     {
         if ($id) {
-            $record = Empresa::where('id', $id);
+            $record = ModelsEmpresa::where('id', $id);
             $record->delete();
         }
     }
