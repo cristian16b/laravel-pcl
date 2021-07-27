@@ -16,9 +16,9 @@ class Usuario extends Component
     {
         $this->data = ModelsUsuario::all();
         $this->listaEmpresas = ModelEmpresa::all();
-        // foreach ($this->listaEmpresas as $flight) {
+        // foreach ($this->data as $d) {
         //     // var_dump($flight);
-        //     echo $flight->id . '-' . $flight->nombre . '<br>';
+        //     echo $d->empresa_id . '<br>';
         // }
         // die;
         return view('livewire.usuario.usuario');
