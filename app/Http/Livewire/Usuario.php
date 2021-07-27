@@ -31,7 +31,11 @@ class Usuario extends Component
         $this->validate([
             'nombre' => 'required|min:5',
             'apellido' => 'required',
-            'correo' => 'required'
+            'correo' => 'required|email:rfc,dns',
+            'clave' => 'required|min:5',
+            'grupo' => 'required',
+            'empresa' => 'required',
+            'anio' => 'required',
         ]);
         ModelsUsuario::create([
             'nombre' => $this->nombre,
@@ -48,6 +52,9 @@ class Usuario extends Component
         $this->nombre = $record->nombre;
         $this->apellido = $record->apellido;
         $this->correo = $record->correo;
+        $this->clave = $record->clave;
+        $this->grupo = $record->grupo;
+        $this->empresa = $record->empresa;
         $this->update = true;
     }
     public function update()
@@ -55,7 +62,11 @@ class Usuario extends Component
         $this->validate([
             'nombre' => 'required|min:5',
             'apellido' => 'required',
-            'correo' => 'required'
+            'correo' => 'required|email:rfc,dns',
+            'clave' => 'required|min:5',
+            'grupo' => 'required',
+            'empresa' => 'required',
+            'anio' => 'required',
         ]);
         if ($this->selected_id) {
             $record = ModelsUsuario::find($this->selected_id);
@@ -63,6 +74,10 @@ class Usuario extends Component
                 'nombre' => $this->nombre,
                 'apellido' => $this->apellido,
                 'correo' => $this->correo,
+                'clave' => $this->clave,
+                'grupo' => $this->grupo,
+                'empresa' => $this->empresa,
+                'anio' => $this->anio,
             ]);
             $this->resetInput();
             $this->update = false;
