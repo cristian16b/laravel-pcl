@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Empresa as ModelsEmpresa;
 use Livewire\Component;
 
 class Empresa extends Component
@@ -12,6 +13,7 @@ class Empresa extends Component
     
     public function render()
     {
+        $this->data = ModelsEmpresa::all();
         return view('livewire.empresa.empresa');
     }
    

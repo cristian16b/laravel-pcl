@@ -1,3 +1,4 @@
+@extends('layouts.app')
 <div>  
     @if($update)
         @include('livewire.empresa.update')
