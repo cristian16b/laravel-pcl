@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Livewire\Empresa;
+use App\Http\Livewire\Usuario;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +20,6 @@ Route::get('/', function () {
     return view('app');
 });
 
-Route::get('empresa', function () {
-    return view('livewire.empresa.empresa');
-});
+Route::get('empresa', Empresa::class);
 
-Route::get('usuario', function () {
-    return view('livewire.usuario.usuario');
-});
+Route::get('usuario', Usuario::class);

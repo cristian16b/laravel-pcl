@@ -1,5 +1,5 @@
 <div>  
-    @if($updateMode)
+    @if($update)
         @include('livewire.empresa.update')
     @else
         @include('livewire.empresa.create')
