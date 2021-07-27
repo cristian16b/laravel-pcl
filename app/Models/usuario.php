@@ -16,6 +16,6 @@ class Usuario extends Model
 
     public function getEmpresa()
     {
-        return $this->belongsTo(Empresa::class);
+        return $this->belongsTo(Empresa::class,'empresa_id','id');
     }
 }

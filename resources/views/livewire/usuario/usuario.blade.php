@@ -24,7 +24,7 @@
                     <td class="border px-4 py-2">{{ $item->apellido }}</td>
                     <td class="border px-4 py-2">{{ $item->correo }}</td>
                     <td class="border px-4 py-2">{{ $item->clave }}</td>
-                    <td class="border px-4 py-2">{{ $item->empresa }} - {{ $item->empresa }}</td>
+                    <td class="border px-4 py-2">{{ $item->empresa_id }}</td>
                     <td class="border px-4 py-2">{{ $item->anio }}</td>
                     <td class="border px-4 py-2">
                         <button wire:click="edit({{ $item->id }})" 
@@ -44,4 +44,12 @@
             @endforelse
         </tbody>
     </table>
+    <button wire:click="exportarPdf()" 
+                            class="px-2 py-1 bg-blue-200 text-blue-500 hover:bg-blue-500 hover:text-white rounded">
+                            Exportar PDF
+                        </button>
+                        <button wire:click="exportarXls()" 
+                            class="px-2 py-1 bg-red-200 text-red-500 hover:bg-red-500 hover:text-white rounded">
+                            Exportar XLS
+                        </button>
 </div>

@@ -73,7 +73,7 @@ class Usuario extends Component
         $this->correo = $record->correo;
         $this->clave = $record->clave;
         $this->grupo = $record->grupo;
-        $this->empresa = $record->empresa;
+        $this->empresa_id = $record->empresa_id;
         $this->anio = $record->anio;
         $this->update = true;
     }
@@ -109,5 +109,13 @@ class Usuario extends Component
             $record = ModelsUsuario::where('id', $id);
             $record->delete();
         }
+    }
+
+    public function exportarPdf() {
+
+    }
+
+    public function exportarXls() {
+        
     }
 }
