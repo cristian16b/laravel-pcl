@@ -20,6 +20,7 @@ Route::get('/', function () {
     return view('app');
 });
 
-Route::get('empresa', Empresa::class);
+// las siguientes son las rutas para los componentes livewire
+Route::view('empresa', 'livewire.empresa.home');
 
-Route::get('usuario', Usuario::class);
+Route::view('usuario', 'livewire.usuario.home');
