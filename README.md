@@ -9,6 +9,9 @@ Notas para instalar y configurar el proyecto:
 
 composer install
 
+Luego Ir a carpeta config/livewire.php y descomentar la siguiente linea
+'asset_url' => url('/'),
+
 4) Correr 
 
 npm install

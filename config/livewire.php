@@ -58,7 +58,7 @@ return [
     // la siguiente linea no funciona
     // 'asset_url' => null,
     // se reemplaza por
-    'asset_url' => url('/'),
+    // 'asset_url' => url('/'),
     // fuente: https://github.com/livewire/livewire/issues/242
 
     /*
