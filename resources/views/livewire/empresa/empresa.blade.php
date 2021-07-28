@@ -38,4 +38,8 @@
             @endforelse
         </tbody>
     </table>
+    <a href="{{url('/')}}"
+                            class="px-2 py-1 bg-gren-200 text-green-500 hover:bg-red-500 hover:text-white rounded">
+                            Volver
+</a>
 </div>

@@ -165,8 +165,8 @@ return [
         /*
          * Package Service Providers...
          */
-        App\Providers\PHPExcelMacroServiceProvider::class,
-        /*
+        
+         /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
