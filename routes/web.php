@@ -40,3 +40,8 @@ Route::get('/imprimir/pdf/usuarios',function(){
 Route::get('/imprimir/excel/usuarios',function(){
     return Excel::download(new UsuariosExport, 'listado-usuarios.xlsx');
 });
+
+Route::get('/imprimir/qr/{id}/{nombre}', function ($id,$nombre) {
+    // dd($nombre . ' ' . $id);
+    return 'User '.$id;
+});
