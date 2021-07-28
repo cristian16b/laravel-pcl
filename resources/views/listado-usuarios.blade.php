@@ -27,6 +27,7 @@ h4{
   color: white;
 }
 </style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <h4>{{$titulo}}</h4>
 <table class="table-auto w-full" id="users">
         <thead>

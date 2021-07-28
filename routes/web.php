@@ -1,10 +1,11 @@
 <?php
 
+use App\Exports\UsuariosExport;
 use App\Http\Livewire\Empresa;
 use App\Http\Livewire\Usuario;
 use Illuminate\Support\Facades\Route;
 use App\Models\Usuario as ModelsUsuario;
-
+use Maatwebsite\Excel\Facades\Excel;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,7 @@ Route::view('empresa', 'livewire.empresa.home');
 
 Route::view('usuario', 'livewire.usuario.home');
 
-Route::get('/imprimir/usuarios',function(){
+Route::get('/imprimir/pdf/usuarios',function(){
 
     $data = [
         'titulo' => 'Listado de usuarios registrados',
@@ -34,4 +35,8 @@ Route::get('/imprimir/usuarios',function(){
     ];
     $pdf = \PDF::loadView('listado-usuarios', $data);
     return $pdf->download('listado-usuarios.pdf');
+});
+
+Route::get('/imprimir/excel/usuarios',function(){
+    return Excel::download(new UsuariosExport, 'listado-usuarios.xlsx');
 });

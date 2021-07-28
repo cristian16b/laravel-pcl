@@ -44,12 +44,12 @@
             @endforelse
         </tbody>
     </table>
-    <a href="{{url('imprimir/usuarios')}}"
+    <a href="{{url('imprimir/pdf/usuarios')}}"
                             class="px-2 py-1 bg-blue-200 text-blue-500 hover:bg-blue-500 hover:text-white rounded">
                             Exportar PDF
     </a>
-                        <button wire:click="exportarXls()" 
+<a href="{{url('imprimir/excel/usuarios')}}"
                             class="px-2 py-1 bg-red-200 text-red-500 hover:bg-red-500 hover:text-white rounded">
                             Exportar XLS
-                        </button>
+</a>
 </div>
