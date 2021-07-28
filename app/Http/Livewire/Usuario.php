@@ -114,15 +114,6 @@ class Usuario extends Component
         }
     }
 
-    public function exportarPdf() {
-        $data = [
-            'titulo' => 'Styde.net'
-        ];
-    
-        return PDF::loadView('vista-pdf', $data)
-            ->stream('archivo.pdf');
-    }
-
     public function exportarXls() {
 
     }

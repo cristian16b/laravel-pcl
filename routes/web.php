@@ -26,14 +26,12 @@ Route::view('empresa', 'livewire.empresa.home');
 
 Route::view('usuario', 'livewire.usuario.home');
 
-Route::get('/imprimir',function(){
-    // $pdf = app('dompdf.wrapper');
-    // $pdf->loadHTML('<h1>Styde.net</h1>');
-    // return $pdf->download('mi-archivo.pdf');
+Route::get('/imprimir/usuarios',function(){
+
     $data = [
         'titulo' => 'Listado de usuarios registrados',
         'data' => ModelsUsuario::all()
     ];
     $pdf = \PDF::loadView('listado-usuarios', $data);
-    return $pdf->download('archivo.pdf');
+    return $pdf->download('listado-usuarios.pdf');
 });
