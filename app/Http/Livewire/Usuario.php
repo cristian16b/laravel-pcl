@@ -8,6 +8,7 @@ use App\Http\Livewire\Empresa;
 use App\Models\Empresa as ModelEmpresa;
 // reference the Dompdf namespace
 use Dompdf\Dompdf;
+use PhpOffice\PhpSpreadsheet\Writer\Pdf;
 
 class Usuario extends Component
 {
@@ -114,18 +115,12 @@ class Usuario extends Component
     }
 
     public function exportarPdf() {
-        // instantiate and use the dompdf class
-        $dompdf = new Dompdf();
-        $dompdf->loadHtml('hello world');
-
-        // (Optional) Setup the paper size and orientation
-        $dompdf->setPaper('A4', 'landscape');
-
-        // Render the HTML as PDF
-        $dompdf->render();
-
-        // Output the generated PDF to Browser
-        $dompdf->stream();
+        $data = [
+            'titulo' => 'Styde.net'
+        ];
+    
+        return PDF::loadView('vista-pdf', $data)
+            ->stream('archivo.pdf');
     }
 
     public function exportarXls() {
