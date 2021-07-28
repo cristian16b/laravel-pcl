@@ -6,6 +6,7 @@ use App\Http\Livewire\Usuario;
 use Illuminate\Support\Facades\Route;
 use App\Models\Usuario as ModelsUsuario;
 use Maatwebsite\Excel\Facades\Excel;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,5 +44,7 @@ Route::get('/imprimir/excel/usuarios',function(){
 
 Route::get('/imprimir/qr/{id}/{nombre}', function ($id,$nombre) {
     // dd($nombre . ' ' . $id);
-    return 'User '.$id;
+    // return 'User '.$id;
+    QrCode::format('png');
+    return QrCode::size(200)->generate($nombre);
 });

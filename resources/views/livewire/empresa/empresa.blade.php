@@ -29,14 +29,14 @@
                             class="px-2 py-1 bg-red-200 text-red-500 hover:bg-red-500 hover:text-white rounded">
                             Borrar
                         </button>
-                        <a href="{{url('/imprimir/qr/') . '/' . $item->id  .'/' . $item->nombre }}"
+                        <a  href="{{url('/imprimir/qr/') . '/' . $item->id  .'/' . $item->nombre }}"
                             class="px-2 py-1 bg-gren-200 text-green-500 hover:bg-green-500 hover:text-white rounded">
                             QR
                         </a>
-                        <div class="visible-print text-center">
-                            {!! QrCode::size(100)->generate($item->nombre); !!}
+                        <!-- <div class="visible-print text-center">
+                            {!! QrCode::size(200)->generate($item->nombre); !!}
                             <p></p>
-                        </div>
+                        </div> -->
                     </td>
                 </tr>
             @empty
